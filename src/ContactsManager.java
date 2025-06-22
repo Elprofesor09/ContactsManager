@@ -1,24 +1,21 @@
 public class ContactsManager {
-    Contact[] myContacts;
-    int contactsCount;
+    Contact[] myFriends;
+    int friendsCount;
 
-    // Constructeur
     public ContactsManager() {
-        myContacts = new Contact[500]; // Espace pour 500 contacts
-        contactsCount = 0;
+        this.friendsCount = 0;
+        this.myFriends = new Contact[500];
     }
 
-    // Méthode pour ajouter un contact
     public void addContact(Contact contact) {
-        myContacts[contactsCount] = contact;
-        contactsCount++;
+        myFriends[friendsCount] = contact;
+        friendsCount++;
     }
 
-    // Méthode pour chercher un contact par nom
     public Contact searchContact(String searchName) {
-        for (int i = 0; i < contactsCount; i++) {
-            if (myContacts[i].name.equals(searchName)) {
-                return myContacts[i];
+        for (int i = 0; i < friendsCount; i++) {
+            if (myFriends[i].name.equalsIgnoreCase(searchName)) {
+                return myFriends[i];
             }
         }
         return null;

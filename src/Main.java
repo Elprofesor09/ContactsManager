@@ -1,39 +1,42 @@
 public class Main {
     public static void main(String[] args) {
+
         ContactsManager myContactsManager = new ContactsManager();
 
-        Contact contact1 = new Contact();
-        contact1.name = "Alice";
-        contact1.phoneNumber = "0700123456";
-        myContactsManager.addContact(contact1);
 
-        Contact contact2 = new Contact();
-        contact2.name = "Bob";
-        contact2.phoneNumber = "0700789456";
-        myContactsManager.addContact(contact2);
+        Contact ami1 = new Contact();
+        ami1.name = "Yasmine";
+        ami1.phoneNumber = "0700000001";
+        myContactsManager.addContact(ami1);
 
-        Contact contact3 = new Contact();
-        contact3.name = "Charlie";
-        contact3.phoneNumber = "0700987123";
-        myContactsManager.addContact(contact3);
+        Contact ami2 = new Contact();
+        ami2.name = "Issa";
+        ami2.phoneNumber = "0700000002";
+        myContactsManager.addContact(ami2);
 
-        Contact contact4 = new Contact();
-        contact4.name = "Diana";
-        contact4.phoneNumber = "0700345678";
-        myContactsManager.addContact(contact4);
+        Contact ami3 = new Contact();
+        ami3.name = "Fatou";
+        ami3.phoneNumber = "0700000003";
+        myContactsManager.addContact(ami3);
 
-        Contact contact5 = new Contact();
-        contact5.name = "Eric";
-        contact5.phoneNumber = "0700567890";
-        myContactsManager.addContact(contact5);
+        Contact ami4 = new Contact();
+        ami4.name = "Boris";
+        ami4.phoneNumber = "0700000004";
+        myContactsManager.addContact(ami4);
 
-        // Recherche d'un contact
-        Contact result = myContactsManager.searchContact("Charlie");
+        Contact ami5 = new Contact();
+        ami5.name = "Mariam";
+        ami5.phoneNumber = "0700000005";
+        myContactsManager.addContact(ami5);
 
-        if (result != null) {
-            System.out.println("Numéro de Charlie : " + result.phoneNumber);
+
+        String nomRecherche = "Fatou";
+        Contact resultat = myContactsManager.searchContact(nomRecherche);
+
+        if (resultat != null) {
+            System.out.println("Numéro de " + nomRecherche + " : " + resultat.phoneNumber);
         } else {
-            System.out.println("Contact non trouvé !");
+            System.out.println(nomRecherche + " n'a pas été trouvé(e).");
         }
     }
 }
